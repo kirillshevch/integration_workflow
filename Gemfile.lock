@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    integration_workflow (0.1.0)
+    integration_workflow (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -46,6 +46,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   integration_workflow!
