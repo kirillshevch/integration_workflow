@@ -8,7 +8,9 @@ Install the gem and add it to the application's Gemfile by executing:
 
 Add the `integration_workflow` gem to your application's Gemfile:
 
+```sh
 gem 'integration_workflow'
+```
 
 And then execute:
 
@@ -18,7 +20,47 @@ bundle install
 
 ## Usage
 
-TODO
+To define a workflow with steps and actions, you can use the `step` and `action` methods, there are 2 options:
+
+1. without options:
+
+```ruby
+workflow = IntegrationWorkflow.new do
+  step 'Step 1' do
+    action 'Action 1' do
+      puts "Running #{name} in #{step_name}"
+    end
+  end
+
+  step 'Step 2' do
+    action 'Action 1' do
+      puts "Running #{name} in #{step_name}"
+    end
+  end
+end
+
+workflow.run
+```
+
+2. with options:
+
+```ruby
+workflow = IntegrationWorkflow.new(user_id: '1') do
+  step 'Step 1' do
+    action 'Action 1' do
+      puts "Running #{name} in #{step_name} with user_id: #{options[:user_id]}"
+    end
+  end
+
+  step 'Step 2' do
+    action 'Action 1' do
+      puts "Running #{name} in #{step_name} with user_id: #{options[:user_id]}"
+    end
+  end
+end
+
+workflow.run
+```
 
 ## Development
 
